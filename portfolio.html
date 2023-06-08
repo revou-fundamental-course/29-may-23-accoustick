@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta author="">
     <title>Company Profile PT Bersama Selalu Indah</title>
     <link rel="icon" href="img/mainlogo.png">
     <link rel="stylesheet" href="css/style.css">
@@ -17,13 +16,13 @@
         </div>
         <nav class="menu">
             <div class="menu-item"><a href="index.html"> Home</a></div>
-            <div class="menu-item"><a href="profile.html"> Our Profile</a></div>
-            <div class="menu-item"><a href="portfolio.html"> Portfolio</a></div>
+            <div class="menu-item"><a href="pages/profile.html"> Our Profile</a></div>
+            <div class="menu-item"><a href="pages/portfolio.html"> Portfolio</a></div>
             <div class="menu-item"><a href="#message-us"> Message Us</a></div>
 
         </nav>
     </header>
-    <div id="main-content">
+    <section id="main-content">
         <div class="content">
             <div id="banner">
                 <div class="welcome-message">
@@ -84,29 +83,18 @@
                                 <tr>
                                     <td>Tanggal Lahir</td>
                                     <td>:</td>
-                                    <td colspan="2"><input type="date" name="birth-date" id="birth-date" class="input-text"></td>
+                                    <td colspan="2"><input type="date" name="tgl-lahir" id="tgl-lahir" class="input-text"></td>
                                 </tr>
-                                <tr>
-                                    <td>Email</td>
-                                    <td>:</td>
-                                    <td colspan="2"><input type="text" name="email" id="email" class="input-text"></td>
-                                </tr>
-                                <tr>
-                                    <td>Phone</td>
-                                    <td>:</td>
-                                    <td colspan="2"><input type="number" name="phone" id="phone" class="input-text"></td>
-                                </tr>
-                               
                                 <tr>
                                     <td>Jenis Kelamin</td>
                                     <td>:</td>
-                                    <td><input type="radio" name="gender" id="gender1" value="Laki-laki"> Laki-Laki</td>
-                                    <td><input type="radio" name="gender" id="gender2" value="Wanita"> Wanita</td>
+                                    <td><input type="radio" name="jenis-kelamin" id="jenis-kelamin1" value="Laki-laki"> Laki-Laki</td>
+                                    <td><input type="radio" name="jenis-kelamin" id="jenis-kelamin2" value="Wanita"> Wanita</td>
                                 </tr>
                                 <tr>
                                     <td>Pesan</td>
                                     <td>:</td>
-                                    <td colspan="2"><textarea row="3" name="message" id="message" class="text-area" placeholder="Pesan kamu"></textarea></td>
+                                    <td colspan="2"><textarea row="3" name="pesan" id="pesan" class="text-area" placeholder="Pesan kamu"></textarea></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2"></td>
@@ -117,12 +105,10 @@
                     </div>
                     <div id="result" class="message-us-result">
                             <div class="label-result">
-                                <p >Name : <span id="lb-name"  class="text-bold text-capital"></span></p>
+                                <p >Name : <span id="lb-name"  class="text-bold"></span></p>
                                 <p>Tgl Lahir : <span id="lb-date"  class="text-bold"></span></p>
-                                <p>Email   : <span id="lb-email"  class="text-bold"></span></p>
-                                <p>Phone   : <span id="lb-phone"  class="text-bold"></span></p>
-                                <p>Jenis Kelamin : <span id="lb-gender"  class="text-bold text-capital"></span></p>
-                                <p>Message : <span id="lb-message"  class="text-bold text-capital"></span></p>
+                                <p>Jenis Kelamin : <span id="lb-gender"  class="text-bold"></span></p>
+                                <p>Message : <span id="lb-message"  class="text-bold"></span></p>
                             </div>
                     </div>
                 </div>
@@ -149,67 +135,65 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <footer>
         <div id="copyright"> Copyright © 2023 PT Bersama Selalu Indah. All Rights Reserved.  </div>
     </footer>
-
+</body>
 <script type="text/javascript">
- 
     // onload modal dialog
     var modal = document.getElementById("modal-welcome");
-   var span = document.getElementsByClassName("close")[0];
-   window.onload = function() {
-   modal.style.display = "block";
-   }
-   span.onclick = function() {
-   modal.style.display = "none";
-   }
-   window.onclick = function(event) {
-       if (event.target == modal) {
-           modal.style.display = "none";
-       }
-   }
+    var span = document.getElementsByClassName("close")[0];
+    window.onload = function() {
+    modal.style.display = "block";
+    }
+    span.onclick = function() {
+    modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 
-   //set welcome name
-   function setName(){
-       var name = document.getElementById("welcome-input").value;
-       if(name=="" || name == null){ 
-           alert ('Isi Nama Anda');
-           document.getElementById("welcome-input").focus();
-       }else{
-           document.getElementById("welcome-name").innerText = name;
-           modal.style.display = "none";
-           name.value="";
-       }
-   }
+    //set welcome name
+    function setName(){
+        var name = document.getElementById("welcome-input").value;
+        if(name=="" || name == null){ 
+            alert ('Isi Nama Anda');
+            document.getElementById("welcome-input").focus();
+        }else{
+            document.getElementById("welcome-name").innerText = name;
+            modal.style.display = "none";
+            name.value="";
+        }
+    }
 
-   //validate form
-   function validateForm(){
-       var name = document.forms["message-form"]["full-name"].value;
-       var date = document.forms["message-form"]["birth-date"].value;
-       var email = document.forms["message-form"]["email"].value;
-       var phone = document.forms["message-form"]["phone"].value;
-       var gender = document.forms["message-form"]["gender"].value;
-       var message = document.forms["message-form"]["message"].value;
+    //validate form
+    function validateForm(){
+        var name = document.forms["message-form"]["full-name"].value;
+        var date = document.forms["message-form"]["tgl-lahir"].value;
+        var email = document.forms["message-form"]["email"].value;
+        var phone = document.forms["message-form"]["phone"].value;
+        var gender = document.forms["message-form"]["jenis-kelamin"].value;
+        var message = document.forms["message-form"]["pesan"].value;
 
-       if(name == "" || date == "" || gender == "" || message == "" || email =="" || phone ==""){
-           alert("Data Harus diisi");
-           return false;
-       }
+        if(name == "" || date == "" || gender == "" || message == "" || email =="" || phone ==""){
+            alert("Data Harus diisi");
+            return false;
+        }
 
-       setData(name, date, email, phone, gender, message);
-       return false;
-   }
+        setData(name, date, email, phone, gender, message);
+        return false;
+    }
 
-   function setData(name, date, email, phone, gender, message){
-       document.getElementById("lb-name").innerText = name;
-       document.getElementById("lb-date").innerText = date;
-       document.getElementById("lb-email").innerText = email;
-       document.getElementById("lb-phone").innerText = phone;
-       document.getElementById("lb-gender").innerText = gender;
-       document.getElementById("lb-message").innerText = message;
-   }
+    function setData(name, date, email, phone, gender, message){
+        document.getElementById("lb-name").innerText = name;
+        document.getElementById("lb-date").innerText = date;
+        document.getElementById("lb-email").innerText = email;
+        document.getElementById("lb-phone").innerText = phone;
+        document.getElementById("lb-gender").innerText = gender;
+        document.getElementById("lb-message").innerText = message;
+    }
 </script>
-</body>
 </html>
