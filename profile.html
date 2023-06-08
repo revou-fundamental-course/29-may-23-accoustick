@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company Profile PT Bersama Selalu Indah</title>
-    <link rel="icon" href="../img/mainlogo.png">
-    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="icon" href="img/mainlogo.png">
+    <link rel="stylesheet" href="css/profile.css">
 </head>
 <body>
     <header>
         <div id="logo" class="logo"> 
-            <img src="../img/mainlogo.png" width="50px" height="50px">
+            <img src="img/mainlogo.png" width="50px" height="50px">
             <span class="logo-text"> PT BERSAMA SELALU INDAH</span>
         </div>
         <nav class="menu">
@@ -25,28 +25,70 @@
     <section id="main-content">
         <div class="content">
             <div id="profil" class="profil">
+                
                 <div class="title">
                     <h6> Our Vision</h6>
-                    <h4> See our office <span class="blue">Location</span></h4>
+                    <h4> See our Company <span class="blue">Vision</span></h4>
                     <div class="line-dec"></div>
+                    <div class="vision-text">
+                        <p>Visi Kami yaitu menjadi perusahaan yang selalu memberikan pengalaman terbaik kepada para pasangan.
+                        </p>
+                    </div>
                 </div>
-                <div class="vision-text">
-                   
+                <div class="banner-img">
+                    <img src="img/visi.png" alt="banner" class="slider">
+                    <img src="img/misi.png" alt="banner"  class="slider" style="display:none">
+                    <img src="img/banner.png" alt="banner"  class="slider" style="display:none">
                 </div>
-
+               
+            </div>
+            <div class="profil">
+                <div class="banner-img">
+                    <img src="img/misi.png" alt="banner">
+                    
+                </div>
                 <div class="title">
-                    <h6> Our Vision</h6>
-                    <h4> See our office <span class="blue">Location</span></h4>
+                    <h6> Our Mission</h6>
+                    <h4> See our Company <span class="blue">Mission</span></h4>
                     <div class="line-dec"></div>
+                    <div class="mission-text">
+                        <p> Misi dari perusahaan kami yaitu
+                         <ul>
+                             <li>Menjadi Perusahaan Pilihan Masyarakat</li>
+                             <li>Menjadi Perusahaan yang selalu dikenang</li>
+                             <li>Memberikan Pengalaman terbaik kepada Pelanggan</li>
+                         </ul>
+                        </p>
+                     </div>
                 </div>
-                <div class="vision-text">
-                   
-                </div>
+                
             </div>
         </div>
     </section>
     <footer>
         <div id="copyright"> Copyright © 2023 PT Bersama Selalu Indah. All Rights Reserved.  </div>
     </footer>
+    <script type="text/javascript">
+        var slideIndex = 1;
+        setInterval(function(){
+            addDivs(1);
+        },5000);
+
+        function addDivs(index){
+            showImage(slideIndex += index)
+        }
+
+        function showImage(index){
+            const imgList = document.getElementsByClassName("slider");
+            var i;
+            if(index > imgList.length){slideIndex =1;}
+            if(index < 1){slideIndex = imgList.length}
+            for(i = 0; i < imgList.length; i++){
+                imgList[i].style.display = "none";
+            }
+            imgList[slideIndex-1].style.display="block";
+        }
+
+    </script>
 </body>
 </html>

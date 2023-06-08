@@ -13,6 +13,12 @@ p {
     font-weight: 300;
     color: #2a2a2a;
   }
+ul li{
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: 300;
+    color: #2a2a2a;
+}
   
 header{
   background-color: #fff!important;
@@ -140,4 +146,21 @@ nav{
 
 .profil{
     margin-top: 100px;
+    display:flex;
+}
+.banner-img{
+    display: flex;
+    padding-left: 100px;
+    width:350px;
+    height: 350px;
+}
+.mission-text .vision-text p{
+    display: flex;
+    width: 700px;
+    margin-top: 80px;
+    margin-left: 100px;
+}
+
+.mission{
+    margin-left:100px;
 }
